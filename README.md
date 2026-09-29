@@ -12,9 +12,9 @@ software engineering project.
 
 ## Overview
 
-Student Portal is a full-stack prototype exploring how a school-facing web
-application could organize public information and authenticated administrative
-workflows.
+Student Portal is a full-stack student-facing information and campus-resource prototype developed as an independent high-school software engineering project. 
+
+It grew from an idea I had while participating in student activities: useful events, resources, support channels, and practical information often exist, but students may not know where to find them. The project explores how those resources could be organized into one accessible portal while keeping sensitive data and institution-specific operations outside the application.
 
 The project focuses on full-stack architecture, authentication and
 authorization, database-backed content management, validation, auditability,
@@ -22,6 +22,16 @@ and safe handling of configuration and application state.
 
 It is a software engineering demonstration, not a production school
 information system.
+
+## Project story
+I started this project after noticing a simple problem in everyday school life: a lot of useful information and support already existed, but students did not always know where to find it.
+As a student involved in student activities, I often saw classmates miss events, overlook useful campus resources, or simply not know who to ask when they needed information. Some resources were scattered across different pages, documents, offices, forms, or announcements. My original idea was therefore quite simple: build one public-facing place where students could see what was happening, discover opportunities to participate, find commonly used campus resources, and better understand where to go for help.
+Over time, the project became much larger than the original frontend prototype. I rebuilt it into a full-stack application with a React/TypeScript frontend, an Express API, PostgreSQL persistence, authenticated administration, server-side authorization, validation, audit logging, migrations, and automated testing. The browser is treated as an untrusted client, with authorization enforced by the API rather than only by frontend route guards.   
+The development process was far from smooth. Several problems only became obvious after repeated testing and review—for example, institution-local dates were initially affected by UTC boundaries, the frontend port and allowed Origin could drift apart, a migration advisory lock was released with the wrong key, and the first health-check design did not properly distinguish an API process being alive from the database and schema actually being ready. Those issues were investigated and corrected rather than hidden behind the prototype label.   
+I also deliberately removed or avoided features when their long-term cost or governance requirements seemed larger than their value. For example, I did not keep a student posting/forum system, because user-generated content would require moderation, complaint handling, ownership, and long-term responsibility. In the same spirit, I tried to avoid turning the portal into a database of sensitive student information. Earlier plans involving health, counseling, safety, and feedback were reduced to neutral directory-style or placeholder content instead of storing medical history, safeguarding reports, counseling notes, or private feedback.   Pasted text
+The public version of this repository goes even further: all institution-specific names, contacts, operational procedures, and sensitive school-specific content have been removed or generalized. The remaining content is fictional or demonstrative. The project is not intended to provide medical, safeguarding, administrative, or other professional advice.
+This is also intentionally not a production school information system. I stopped before implementing institution-specific identity, hosting, managed databases, backups, monitoring, production secrets, content approval workflows, and other operational infrastructure, because those decisions depend on the environment in which a real school would actually deploy and maintain the system.   
+For me, the most important result is not that the portal became “finished” in the production sense. It is that a fairly rough student idea survived several redesigns, technical mistakes, security reviews, database changes, and many bugs—and eventually became a coherent full-stack prototype that can be inspected, run locally, and used as a record of what I learned while building it.
 
 ## Features
 
