@@ -76,11 +76,23 @@ frontend visibility controls.
 
 ## Running Locally
 
-[Use the actual commands already supported by this repository here.
-Do not invent commands.]
+This repository is published primarily as a completed educational/portfolio project.
 
-See the setup documentation for configuration, migrations, demo data,
-startup, teardown, and reset behavior.
+The full source package includes the local review setup, environment template, database migrations, demo seed data, automated tests, and Docker Compose configuration used during development and acceptance testing.
+
+For a clean local review:
+
+1. Use a supported Node.js version.
+2. Create local configuration from `.env.example`.
+3. Install dependencies with the lockfile.
+4. Start the local PostgreSQL service using the included Docker Compose configuration.
+5. Run migrations and the demo seed.
+6. Start the API and frontend.
+7. Verify the liveness/readiness endpoints before using the Admin interface.
+
+The final publication package was acceptance-tested from a fresh extraction against a disposable PostgreSQL environment. Migrations, repeated seeding, API/frontend startup, public navigation, authenticated Admin access, a fictional content mutation with persistence after refresh, hidden-map editing, logout, narrow-viewport behavior, and basic keyboard interaction were verified successfully.
+
+See the included setup documentation and package scripts for the exact commands supported by the current release.
 
 ## Demo Data
 
