@@ -124,4 +124,8 @@ software engineering project rather than as a production service.
 
 ## License
 
-Source code is available under the MIT License. See `LICENSE`.
+Original project source code is offered under the [PolyForm Noncommercial License 1.0.0](https://polyformproject.org/licenses/noncommercial/1.0.0). Noncommercial use and redistribution are permitted under its terms, including retention of the required copyright notice. Commercial use requires separate permission.
+
+Original student-authored prose, explanations, proposals, and original visual content are offered under [Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)](https://creativecommons.org/licenses/by-nc/4.0/), with attribution required. See `CONTENT_LICENSE.md` for scope and attribution guidance. Third-party material retains its own license.
+
+Earlier ZIP archives or earlier revisions published under MIT may remain available under their previous licenses; changing the current repository license does not revoke already-granted permissions.
