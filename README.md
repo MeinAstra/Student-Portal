@@ -74,6 +74,18 @@ PostgreSQL
 Authorization and validation are enforced by the API rather than relying on
 frontend visibility controls.
 
+## Static portfolio website
+
+The read-only portfolio is built for GitHub Pages under `/Student-Portal/`. It serves the restored original writing through hash-based navigation and requires no Express server, PostgreSQL database, account, or environment file.
+
+```sh
+npm ci
+npm run build:pages
+npm run preview:pages -w @portal/web
+```
+
+The deployment workflow is `.github/workflows/pages.yml`; it builds and publishes only `apps/web/dist`. Select **GitHub Actions** in repository **Settings → Pages**, then run **Publish read-only portfolio to GitHub Pages** from the Actions tab. The expected website address is https://meinastra.github.io/Student-Portal/.
+
 ## Running Locally
 
 This repository is published primarily as a completed educational/portfolio project.

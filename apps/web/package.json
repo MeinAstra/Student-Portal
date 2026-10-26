@@ -1,0 +1,27 @@
+{
+  "name": "@portal/web",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "build:pages": "tsc -b && vite build --mode pages",
+    "preview:pages": "vite preview --mode pages",
+    "typecheck": "tsc -b --pretty false",
+    "test": "tsx --test src/*.test.ts src/*.test.tsx src/static/*.test.ts"
+  },
+  "dependencies": {
+    "@portal/contracts": "1.0.0",
+    "@vitejs/plugin-react": "^5.0.2",
+    "vite": "^7.1.4",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "react-router-dom": "^7.8.2"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.12",
+    "@types/react-dom": "^19.1.9",
+    "tsx": "^4.20.5"
+  }
+}

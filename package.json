@@ -1,0 +1,38 @@
+{
+  "name": "student-campus-portal-public",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Institution-neutral full-stack campus portal reference implementation",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "npm run build -w @portal/contracts && npm run build -w @portal/api && npm run build -w @portal/web",
+    "build:pages": "npm run build -w @portal/contracts && npm run build:pages -w @portal/web && node scripts/check-pages-output.mjs",
+    "predev": "npm run build -w @portal/contracts",
+    "dev": "concurrently -n api,web -c blue,green \"npm run dev -w @portal/api\" \"npm run dev -w @portal/web\"",
+    "lint": "eslint .",
+    "typecheck": "npm run typecheck -w @portal/contracts && npm run build -w @portal/contracts && npm run typecheck -w @portal/api && npm run typecheck -w @portal/web",
+    "test": "npm run test -w @portal/contracts && npm run build -w @portal/contracts && npm run test -w @portal/api && npm run test -w @portal/web",
+    "check:public": "node scripts/check-public-release.mjs",
+    "check:metadata": "node scripts/check-repository-metadata.mjs",
+    "env:init": "node scripts/init-local-env.mjs",
+    "db:migrate": "npm run build -w @portal/contracts && npm run db:migrate -w @portal/api",
+    "db:seed": "npm run build -w @portal/contracts && npm run db:seed -w @portal/api",
+    "db:reset": "npm run build -w @portal/contracts && npm run db:reset -w @portal/api --",
+    "demo:user": "npm run build -w @portal/contracts && npm run demo:user -w @portal/api",
+    "verify": "npm run lint && npm run typecheck && npm test && npm run build && npm run check:public && npm run check:metadata",
+    "audit": "npm audit --audit-level=high"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "concurrently": "^9.2.1",
+    "eslint": "^10.9.1",
+    "typescript": "^5.9.2",
+    "typescript-eslint": "^8.42.0"
+  }
+}
